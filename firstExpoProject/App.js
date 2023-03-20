@@ -1,16 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import FirstComponent from './components/FirstComponent';
-import SecondComponent from './components/SecondComponent';
-import Title from './components/Title';
+import { TodoApp } from './components/TodoApp';
 
 export default function App() {
+  
   return (
     <View style={styles.container}>
-      <Title text={"Todo App"} />
-      <FirstComponent />
-      <SecondComponent />
-      <StatusBar style="auto" />
+      <TodoApp />
     </View>
   );
 }
