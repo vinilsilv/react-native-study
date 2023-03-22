@@ -20,7 +20,8 @@ export class TodoApp extends React.Component {
   handleTextInput = (text) => this.setState({ text })
 
   addTodo = async () => {
-    if(this.state.text === '')
+    const text = this.state.text.replaceAll(' ', '')
+    if(text === '')
       return
 
     this.setState(state => ({
