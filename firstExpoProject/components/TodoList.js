@@ -1,5 +1,5 @@
 import React from "react";
-import { Text } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 export class TodoList extends React.Component {
   constructor(props) {
@@ -7,9 +7,17 @@ export class TodoList extends React.Component {
 
   }
 
+  deleteTodo = () => {
+    console.log(';hello')
+  }
+
   getTodos = (todos) =>
     todos.map((todo, i) => {
-      return <Text key={i}>{todo}</Text>
+      return (
+        <View style={styles.todoItem}>
+          <Text style={styles.todoText} onPress={() => this.props.deleteTodo(i)} key={i}>{todo}</Text>
+        </View>
+      )
     })
 
 
@@ -19,3 +27,16 @@ export class TodoList extends React.Component {
     )
   }
 }
+
+const styles = StyleSheet.create({
+  todoItem: {
+    paddingVertical: 15,
+    paddingHorizontal: 20,
+    backgroundColor: 'purple',
+    marginBottom: 5,
+    borderRadius: 10
+  },
+  todoText: {
+    color: '#fff'
+  }
+})
