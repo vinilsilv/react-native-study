@@ -7,10 +7,6 @@ export class TodoList extends React.Component {
 
   }
 
-  deleteTodo = () => {
-    console.log(';hello')
-  }
-
   getTodos = (todos) =>
     todos.map((todo, i) => {
       return (
